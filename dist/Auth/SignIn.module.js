@@ -12,18 +12,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const SignIn_service_1 = require("./SignIn.service");
 const SignIn_controller_1 = require("./SignIn.controller");
+const Auth_Entity_1 = require("./Entity/Auth.Entity");
+const typeorm_1 = require("@nestjs/typeorm");
 let SignInModule = class SignInModule {
     constructor() { }
 };
 SignInModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
-        controllers: [
-            SignIn_controller_1.default
-        ],
-        providers: [
-            SignIn_service_1.default
-        ]
+        imports: [typeorm_1.TypeOrmModule.forFeature([Auth_Entity_1.default])],
+        controllers: [SignIn_controller_1.default],
+        providers: [SignIn_service_1.default],
     }),
     __metadata("design:paramtypes", [])
 ], SignInModule);

@@ -22,6 +22,9 @@ let SignInController = class SignInController {
     signInMethod(userDetail) {
         return this.SignInService.SignIn(userDetail);
     }
+    Login(userDetail) {
+        return this.SignInService.LoginMethod(userDetail);
+    }
 };
 __decorate([
     (0, common_1.Post)(),
@@ -30,6 +33,13 @@ __decorate([
     __metadata("design:paramtypes", [SignIn_dto_1.default]),
     __metadata("design:returntype", void 0)
 ], SignInController.prototype, "signInMethod", null);
+__decorate([
+    (0, common_1.Post)("signIn"),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [SignIn_dto_1.default]),
+    __metadata("design:returntype", void 0)
+], SignInController.prototype, "Login", null);
 SignInController = __decorate([
     (0, common_1.Controller)("auth"),
     __metadata("design:paramtypes", [SignIn_service_1.default])
